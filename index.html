@@ -1,532 +1,1354 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kermicle Media â€" Premium Photo & Video Editing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--bg4:#222;
---text:#f5f5f5;--text2:#999;--text3:#666;
---accent:#e8a838;--accent2:#f0c060;--accent-dim:rgba(232,168,56,.12);
---radius:12px;--transition:.35s cubic-bezier(.4,0,.2,1);
-}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kermicle Media - AI Business Solutions | Complete Sales Guide</title>
+    <meta name="description" content="Transform your business with AI-powered systems. Complete guide to our solutions, pricing, case studies, and ROI analysis.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #d4af37;
+            --primary-dark: #1a1a1a;
+            --secondary-dark: #2d2d2d;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --text-dark: #333;
+            --success-green: #28a745;
+            --border-light: #e9ecef;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-heavy: 0 10px 30px rgba(0,0,0,0.2);
+        }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:var(--transition)}
-nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0}
-nav .container{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;letter-spacing:.5px}
-.logo span{color:var(--accent)}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{font-size:.85rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--text2);transition:var(--transition)}
-.nav-links a:hover{color:var(--accent)}
-.nav-cta{background:var(--accent);color:#0a0a0a;padding:10px 24px;border-radius:50px;font-weight:600;font-size:.8rem;letter-spacing:.5px;text-transform:uppercase;transition:var(--transition)}
-.nav-cta:hover{background:var(--accent2);color:#0a0a0a;transform:translateY(-1px)}
-.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
-.mobile-toggle span{width:24px;height:2px;background:var(--text);transition:var(--transition)}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(232,168,56,.06) 0%,transparent 60%)}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent)}
-.hero-content{position:relative;z-index:2;max-width:800px}
-.hero-tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:24px;padding:8px 16px;border:1px solid rgba(232,168,56,.3);border-radius:50px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;font-weight:700;margin-bottom:24px}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero p{font-size:1.15rem;line-height:1.7;color:var(--text2);max-width:560px;margin-bottom:40px}
-.btn-group{display:flex;gap:16px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:var(--transition);cursor:pointer;border:none}
-.btn-primary{background:var(--accent);color:#0a0a0a}
-.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(232,168,56,.25)}
-.btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.2)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-.hero-grid{position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:45%;display:grid;grid-template-columns:1fr 1fr;gap:12px;opacity:.15;z-index:1}
-.hero-grid div{aspect-ratio:3/4;background:var(--bg3);border-radius:var(--radius)}
-.hero-grid div:nth-child(2){transform:translateY(40px)}
-.hero-grid div:nth-child(3){transform:translateY(-20px)}
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #fff;
+        }
 
-/* STATS BAR */
-.stats{border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:48px 0}
-.stats .container{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--accent);margin-bottom:4px}
-.stat-label{font-size:.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3)}
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
 
-/* SECTION DEFAULTS */
-section{padding:120px 0}
-.section-tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;margin-bottom:20px;line-height:1.15}
-.section-desc{font-size:1.05rem;color:var(--text2);line-height:1.7;max-width:560px}
-.section-header{margin-bottom:64px}
-.section-header.center{text-align:center}
-.section-header.center .section-desc{margin:0 auto}
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-/* SERVICES */
-.services{background:var(--bg2)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
-.service-card{background:var(--bg);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:40px;transition:var(--transition);position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:var(--transition)}
-.service-card:hover{border-color:rgba(232,168,56,.2);transform:translateY(-4px)}
-.service-card:hover::before{opacity:1}
-.service-icon{width:48px;height:48px;border-radius:10px;background:var(--accent-dim);display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:1.3rem}
-.service-card h3{font-size:1.15rem;font-weight:600;margin-bottom:12px}
-.service-card p{font-size:.9rem;color:var(--text2);line-height:1.7}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
-/* PORTFOLIO */
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.portfolio-item{position:relative;aspect-ratio:4/3;background:var(--bg3);border-radius:var(--radius);overflow:hidden;cursor:pointer}
-.portfolio-item::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);opacity:0;transition:var(--transition);z-index:2}
-.portfolio-item:hover::before{opacity:1}
-.portfolio-item .overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:3;transform:translateY(10px);opacity:0;transition:var(--transition)}
-.portfolio-item:hover .overlay{transform:translateY(0);opacity:1}
-.overlay h4{font-size:.95rem;font-weight:600;margin-bottom:4px}
-.overlay span{font-size:.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
-.portfolio-item .placeholder-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.placeholder-art .circle{width:60px;height:60px;border:2px solid rgba(255,255,255,.08);border-radius:50%}
-.portfolio-item:nth-child(1){background:linear-gradient(135deg,#1a1520,#0d0d15)}
-.portfolio-item:nth-child(2){background:linear-gradient(135deg,#15191a,#0d1215);grid-row:span 2;aspect-ratio:auto}
-.portfolio-item:nth-child(3){background:linear-gradient(135deg,#1a1815,#15120d)}
-.portfolio-item:nth-child(4){background:linear-gradient(135deg,#141a17,#0d150f)}
-.portfolio-item:nth-child(5){background:linear-gradient(135deg,#1a1517,#150d10)}
-.portfolio-item:nth-child(6){background:linear-gradient(135deg,#17171a,#100d15)}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-/* ABOUT */
-.about{background:var(--bg2)}
-.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
-.about-image{aspect-ratio:3/4;background:linear-gradient(135deg,var(--bg3),var(--bg));border-radius:var(--radius);position:relative;overflow:hidden}
-.about-image::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,.06);border-radius:var(--radius)}
-.about-image .initials{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:4rem;color:rgba(255,255,255,.04)}
-.about-content .section-desc{max-width:none;margin-bottom:32px}
-.about-details{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
-.about-detail{padding:20px;background:var(--bg);border-radius:10px;border:1px solid rgba(255,255,255,.06)}
-.about-detail .label{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);margin-bottom:6px}
-.about-detail .value{font-weight:600;font-size:.95rem}
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-/* TESTIMONIALS */
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:24px}
-.testimonial-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:40px;position:relative}
-.testimonial-card::before{content:'\201C';position:absolute;top:20px;right:28px;font-family:'Playfair Display',serif;font-size:5rem;color:rgba(232,168,56,.1);line-height:1}
-.stars{color:var(--accent);font-size:.85rem;margin-bottom:16px;letter-spacing:2px}
-.testimonial-card p{font-size:.95rem;line-height:1.8;color:var(--text2);margin-bottom:24px;font-style:italic}
-.testimonial-author{display:flex;align-items:center;gap:14px}
-.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--accent)}
-.author-info .name{font-weight:600;font-size:.9rem}
-.author-info .role{font-size:.75rem;color:var(--text3)}
+        .nav-menu a:hover {
+            color: var(--primary-gold);
+        }
 
-/* CONTACT */
-.contact{background:var(--bg2)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
-.contact-form{display:flex;flex-direction:column;gap:20px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.form-group{display:flex;flex-direction:column;gap:8px}
-.form-group label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3)}
-.form-group input,.form-group textarea,.form-group select{background:var(--bg);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;color:var(--text);font-family:inherit;font-size:.9rem;transition:var(--transition);outline:none}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent)}
-.form-group textarea{resize:vertical;min-height:120px}
-.form-group select option{background:var(--bg)}
-.contact-info{display:flex;flex-direction:column;justify-content:center;gap:40px}
-.contact-block h4{font-size:.95rem;font-weight:600;margin-bottom:8px}
-.contact-block p{color:var(--text2);font-size:.9rem;line-height:1.6}
-.contact-block a{color:var(--accent);transition:var(--transition)}
-.contact-block a:hover{color:var(--accent2)}
-.social-links{display:flex;gap:12px;margin-top:8px}
-.social-links a{width:44px;height:44px;border-radius:50%;background:var(--bg);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:var(--transition)}
-.social-links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+        .cta-button {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-/* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,.06);padding:40px 0}
-footer .container{display:flex;align-items:center;justify-content:space-between}
-.footer-left{font-size:.8rem;color:var(--text3)}
-.footer-left span{color:var(--accent)}
-.footer-right{font-size:.75rem;color:var(--text3)}
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
 
-/* ANIMATIONS */
-[data-animate]{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-[data-animate].visible{opacity:1;transform:translateY(0)}
-[data-animate][data-delay="1"]{transition-delay:.1s}
-[data-animate][data-delay="2"]{transition-delay:.2s}
-[data-animate][data-delay="3"]{transition-delay:.3s}
-[data-animate][data-delay="4"]{transition-delay:.4s}
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+        }
 
-/* MOBILE */
-@media(max-width:900px){
-  .nav-links{display:none}
-  .mobile-toggle{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(10,10,10,.97);justify-content:center;align-items:center;gap:28px;z-index:100}
-  .nav-links.open a{font-size:1.1rem}
-  .hero-grid{display:none}
-  .hero-content{max-width:100%}
-  .stats .container{grid-template-columns:repeat(2,1fr);gap:24px}
-  .services-grid{grid-template-columns:1fr}
-  .portfolio-grid{grid-template-columns:1fr 1fr}
-  .portfolio-item:nth-child(2){grid-row:auto;aspect-ratio:4/3}
-  .about-grid{grid-template-columns:1fr;gap:40px}
-  .about-image{max-height:400px}
-  .contact-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  footer .container{flex-direction:column;gap:12px;text-align:center}
-}
-@media(max-width:600px){
-  .portfolio-grid{grid-template-columns:1fr}
-  .testimonials-grid{grid-template-columns:1fr}
-  section{padding:80px 0}
-}
-</style>
+        .section {
+            display: none;
+            padding: 3rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--primary-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin: 0 0 1rem 0;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success-green);
+            margin: 1rem 0;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .pricing-table th {
+            background: var(--primary-dark);
+            color: white;
+            font-weight: 600;
+        }
+
+        .pricing-table tr:hover {
+            background: var(--light-gray);
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary-gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .case-study h4 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .case-study .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .result-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success-green);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0 1rem 3rem;
+            border-left: 2px solid var(--primary-gold);
+            margin-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            background: var(--light-gray);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: var(--primary-dark);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-card .icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            border: 4px solid var(--border-light);
+            border-top: 4px solid var(--primary-gold);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-gold), #f4d03f);
+            color: var(--primary-dark);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer .logo {
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="nav">
-  <div class="container">
-    <a href="#" class="logo">Kermicle<span>Visuals</span></a>
-    <div class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#contact" class="nav-cta">Get a Quote</a>
-    </div>
-    <div class="mobile-toggle" id="mobileToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-tag">Premium Editing Services</div>
-      <h1>Your Vision.<br>Perfectly <em>Crafted.</em></h1>
-      <p>Professional photo and video editing that transforms raw footage into cinematic masterpieces. Elevate your brand with world-class post-production.</p>
-      <div class="btn-group">
-        <a href="#contact" class="btn btn-primary">Let's Work Together â†'</a>
-        <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-grid"><div></div><div></div><div></div><div></div></div>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="container">
-    <div data-animate><div class="stat-num">500+</div><div class="stat-label">Projects Delivered</div></div>
-    <div data-animate data-delay="1"><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
-    <div data-animate data-delay="2"><div class="stat-num">100%</div><div class="stat-label">Client Satisfaction</div></div>
-    <div data-animate data-delay="3"><div class="stat-num">48hr</div><div class="stat-label">Avg Turnaround</div></div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-header center">
-      <div class="section-tag">What I Do</div>
-      <h2 class="section-title">Services Built for Creators</h2>
-      <p class="section-desc">From raw footage to polished final cuts — every frame gets the attention it deserves.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card" data-animate>
-        <div class="service-icon">🎬</div>
-        <h3>Video Editing</h3>
-        <p>Full-service video editing for commercials, social content, music videos, and brand films. Seamless cuts, pacing, and storytelling.</p>
-      </div>
-      <div class="service-card" data-animate data-delay="1">
-        <div class="service-icon">📸</div>
-        <h3>Photo Editing</h3>
-        <p>High-end photo editing and compositing for campaigns, portraits, products, and editorial work. Pixel-perfect results every time.</p>
-      </div>
-      <div class="service-card" data-animate data-delay="2">
-        <div class="service-icon">🎨</div>
-        <h3>Color Grading</h3>
-        <p>Cinematic color grading that sets the mood and elevates your visual narrative. DaVinci Resolve & Premiere workflows.</p>
-      </div>
-      <div class="service-card" data-animate data-delay="1">
-        <div class="service-icon">✨</div>
-        <h3>Retouching</h3>
-        <p>Beauty, product, and commercial retouching with meticulous attention to detail. Natural results that still look flawless.</p>
-      </div>
-      <div class="service-card" data-animate data-delay="2">
-        <div class="service-icon">🔮</div>
-        <h3>Motion Graphics</h3>
-        <p>Custom motion graphics, titles, lower thirds, and animated elements that bring your projects to life with dynamic energy.</p>
-      </div>
-      <div class="service-card" data-animate data-delay="3">
-        <div class="service-icon">🚀</div>
-        <h3>Rush Delivery</h3>
-        <p>Need it yesterday? Priority turnaround available for time-sensitive projects without compromising quality.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="container">
-    <div class="section-header center">
-      <div class="section-tag">Selected Work</div>
-      <h2 class="section-title">The Portfolio</h2>
-      <p class="section-desc">A curated selection of recent projects across film, brand, and creative editorial.</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-item" data-animate>
-        <img src="portfolio-baseball.jpg" alt="Youth Baseball Photography" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0">
-        <div class="overlay"><h4>Youth Sports</h4><span>Sports Photography · B&W Edit</span></div>
-      </div>
-      <div class="portfolio-item" data-animate data-delay="1">
-        <img src="portfolio-football.jpg" alt="Youth Football Photography" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0">
-        <div class="overlay"><h4>Game Day</h4><span>Sports Photography · Color Grading</span></div>
-      </div>
-      <div class="portfolio-item" data-animate data-delay="2">
-        <div class="placeholder-art"><div class="circle"></div></div>
-        <div class="overlay"><h4>Product Shoot</h4><span>Retouching · Compositing</span></div>
-      </div>
-      <div class="portfolio-item" data-animate>
-        <div class="placeholder-art"><div class="circle"></div></div>
-        <div class="overlay"><h4>Documentary</h4><span>Editing · Color</span></div>
-      </div>
-      <div class="portfolio-item" data-animate data-delay="1">
-        <div class="placeholder-art"><div class="circle"></div></div>
-        <div class="overlay"><h4>Fashion Editorial</h4><span>Retouching · Grading</span></div>
-      </div>
-      <div class="portfolio-item" data-animate data-delay="2">
-        <div class="placeholder-art"><div class="circle"></div></div>
-        <div class="overlay"><h4>Social Campaign</h4><span>Motion Graphics</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-header center">
-      <div class="section-tag">Pricing</div>
-      <h2 class="section-title">Transparent Pricing</h2>
-      <p class="section-desc">Quality work at competitive rates. Every project includes revisions and fast turnaround.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;max-width:1100px;margin:0 auto">
-
-      <!-- Photo Editing -->
-      <div style="background:var(--bg3);border-radius:var(--radius);padding:40px 32px;border:1px solid var(--bg4);transition:var(--transition);position:relative;overflow:hidden" onmouseenter="this.style.borderColor='var(--accent)'" onmouseleave="this.style.borderColor='var(--bg4)'">
-        <div style="font-size:.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">📸 Photo Editing</div>
-        <div style="margin-bottom:24px">
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Basic Retouching</span><span style="font-weight:600">$22/image</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Advanced Retouching</span><span style="font-weight:600">$45/image</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Composite/Manipulation</span><span style="font-weight:600">$90/image</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Batch Editing (10+)</span><span style="font-weight:600">$14/image</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--text2)">Product Photography Edit</span><span style="font-weight:600">$36/image</span></div>
-        </div>
-      </div>
-
-      <!-- Video Editing -->
-      <div style="background:var(--bg3);border-radius:var(--radius);padding:40px 32px;border:1px solid var(--accent);position:relative;overflow:hidden;box-shadow:0 0 40px rgba(232,168,56,.08)">
-        <div style="position:absolute;top:16px;right:16px;background:var(--accent);color:var(--bg);font-size:.65rem;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:1px">Most Popular</div>
-        <div style="font-size:.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">🎬 Video Editing</div>
-        <div style="margin-bottom:24px">
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Short Form (under 60s)</span><span style="font-weight:600">$68/video</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Mid Form (1-5 min)</span><span style="font-weight:600">$180/video</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Long Form (5-15 min)</span><span style="font-weight:600">$360/video</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Full Production (15+ min)</span><span style="font-weight:600">$630+</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--text2)">Wedding/Event Highlight</span><span style="font-weight:600">$450+</span></div>
-        </div>
-      </div>
-
-      <!-- Specialty Services -->
-      <div style="background:var(--bg3);border-radius:var(--radius);padding:40px 32px;border:1px solid var(--bg4);transition:var(--transition);position:relative;overflow:hidden" onmouseenter="this.style.borderColor='var(--accent)'" onmouseleave="this.style.borderColor='var(--bg4)'">
-        <div style="font-size:.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">🎨 Specialty</div>
-        <div style="margin-bottom:24px">
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Color Grading</span><span style="font-weight:600">$90/video</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Motion Graphics</span><span style="font-weight:600">$135+</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Thumbnail Design</span><span style="font-weight:600">$27/each</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--bg4)"><span style="color:var(--text2)">Social Media Package (5 posts)</span><span style="font-weight:600">$225</span></div>
-          <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--text2)">Monthly Retainer</span><span style="font-weight:600">Custom</span></div>
-        </div>
-      </div>
-
-    </div>
-    <p style="text-align:center;color:var(--text3);margin-top:48px;font-size:.9rem">All prices include 2 rounds of revisions. Rush delivery available for +30%. <a href="#contact" style="color:var(--accent);text-decoration:underline">Contact me</a> for custom quotes.</p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-image" data-animate style="overflow:hidden">
-        <img src="jeremy-headshot.jpg" alt="Jeremy Kermicle" style="width:100%;height:100%;object-fit:cover;object-position:50% 15%;border-radius:var(--radius);filter:brightness(1.15) contrast(1.1) saturate(0.85)">
-      </div>
-      <div class="about-content">
-        <div class="section-tag">About</div>
-        <h2 class="section-title">Meet Jeremy Kermicle</h2>
-        <p class="section-desc">I'm a professional photo and video editor with 8+ years of experience helping brands, creators, and agencies bring their vision to life. Based in crafting cinematic visuals that connect and convert â€" I obsess over every frame, every cut, every color so you don't have to.</p>
-        <p class="section-desc" style="margin-top:16px">My workflow is built around clear communication, fast turnarounds, and results that exceed expectations. Whether it's a 30-second ad or a full brand campaign, I treat every project like it's my own.</p>
-        <div class="about-details" style="margin-top:32px">
-          <div class="about-detail"><div class="label">Specialties</div><div class="value">Film · Brand · Editorial</div></div>
-          <div class="about-detail"><div class="label">Tools</div><div class="value">Premiere · DaVinci · After Effects</div></div>
-          <div class="about-detail"><div class="label">Availability</div><div class="value">Open for Projects</div></div>
-          <div class="about-detail"><div class="label">Website</div><div class="value" style="color:var(--accent)">kermiclemedia.com</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header center">
-      <div class="section-tag">Testimonials</div>
-      <h2 class="section-title">What Clients Say</h2>
-      <p class="section-desc">Don't just take my word for it â€" here's what people I've worked with have to say.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card" data-animate>
-        <div class="stars">★★★★★</div>
-        <p>"Jeremy completely transformed our brand video. The color grading alone took it from amateur to cinematic. Turnaround was incredibly fast and communication was flawless throughout."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">SM</div>
-          <div class="author-info"><div class="name">Sarah Mitchell</div><div class="role">Creative Director, Lumière Agency</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card" data-animate data-delay="1">
-        <div class="stars">★★★★★</div>
-        <p>"We've worked with a lot of editors but Jeremy is on another level. He understood our vision from the first call and delivered something better than we imagined. An absolute pro."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">DR</div>
-          <div class="author-info"><div class="name">David Rodriguez</div><div class="role">Founder, Apex Media Co.</div></div>
-        </div>
-      </div>
-      <div class="testimonial-card" data-animate data-delay="2">
-        <div class="stars">★★★★★</div>
-        <p>"The retouching work Jeremy did for our product line was insane. Clean, natural, and exactly what we needed for our e-commerce launch. Will absolutely be coming back."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">AK</div>
-          <div class="author-info"><div class="name">Aisha Khan</div><div class="role">Brand Manager, NOVA Skincare</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div>
-        <div class="section-tag">Get in Touch</div>
-        <h2 class="section-title">Let's Create<br>Something Great</h2>
-        <form class="contact-form" onsubmit="event.preventDefault();this.innerHTML='<p style=padding:40px;text-align:center;color:var(--accent);font-weight:600;font-size:1.1rem>Thanks! I\'ll be in touch within 24 hours. 🎬</p>'">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Your name" required>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                KERMICLE MEDIA
             </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="you@email.com" required>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" onclick="showSection('overview')">Overview</a></li>
+                <li><a href="#" onclick="showSection('services')">Services</a></li>
+                <li><a href="#" onclick="showSection('pricing')">Pricing</a></li>
+                <li><a href="#" onclick="showSection('case-studies')">Results</a></li>
+                <li><a href="#" onclick="showSection('process')">Process</a></li>
+                <li><a href="#" onclick="showSection('faq')">FAQ</a></li>
+            </ul>
+            <a href="#" onclick="showSection('contact')" class="cta-button">Get Started</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Overview Section -->
+        <section id="overview" class="section active">
+            <div class="hero">
+                <h1>Transform Your Business with AI-Powered Systems</h1>
+                <p class="subtitle">Replace entire teams, slash operating costs, and generate new revenue streams with intelligent automation that works 24/7/365</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div>Successful AI Implementations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$2M+</div>
+                        <div>Client Cost Savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300-1000%</div>
+                        <div>Typical ROI</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">48 Hours</div>
+                        <div>Implementation Time</div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label>Service Needed</label>
-            <select>
-              <option>Video Editing</option>
-              <option>Photo Editing</option>
-              <option>Color Grading</option>
-              <option>Retouching</option>
-              <option>Motion Graphics</option>
-              <option>Full Post-Production</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Project Details</label>
-            <textarea placeholder="Tell me about your project, timeline, and budget..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message →</button>
-        </form>
-      </div>
-      <div class="contact-info">
-        <div class="contact-block">
-          <h4>Email</h4>
-          <p><a href="mailto:alfred.pennyworth32@gmail.com">alfred.pennyworth32@gmail.com</a></p>
-        </div>
-        <div class="contact-block">
-          <h4>Response Time</h4>
-          <p>I typically respond within 24 hours. For rush projects, mention it in your message.</p>
-        </div>
-        <div class="contact-block">
-          <h4>Follow Along</h4>
-          <div class="social-links">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="YouTube">YT</a>
-            <a href="#" aria-label="Twitter">X</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Behance">Bē</a>
-          </div>
-        </div>
-        <div class="contact-block" style="padding:28px;background:var(--accent-dim);border-radius:var(--radius);border:1px solid rgba(232,168,56,.15)">
-          <h4 style="color:var(--accent)">⚡ Quick Turnaround</h4>
-          <p>Need something fast? I offer 24-48hr rush delivery on most projects. Just ask.</p>
-        </div>
-      </div>
+
+            <h2><i class="fas fa-exclamation-triangle"></i> The Problems Your Business Faces</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <h3>Operational Inefficiencies</h3>
+                    <ul>
+                        <li>20+ hours/week wasted on manual tasks</li>
+                        <li>$500-1000/month in scattered subscriptions</li>
+                        <li>No real-time business insights</li>
+                        <li>Team burnout from repetitive work</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3>Hidden Financial Impact</h3>
+                    <ul>
+                        <li>$50,000-200,000/year in hidden labor costs</li>
+                        <li>30-40% of time spent on administrative tasks</li>
+                        <li>Lost opportunities from slow response times</li>
+                        <li>Client churn from inconsistent service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-lightbulb"></i> The Kermicle Media Solution</h3>
+                <p>4 AI agents working 24/7/365 • Replace entire departments • Real-time decision making • 50-80% reduction in manual work • $3,000-8,000/month in labor cost savings</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" onclick="showSection('services')" class="btn">Explore Our Solutions</a>
+                <a href="#" onclick="showSection('contact')" class="btn btn-secondary">Schedule Free Consultation</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <h1><i class="fas fa-cogs"></i> Complete Service Portfolio</h1>
+            
+            <h2>1. AI Agent Employee System</h2>
+            <p><em>Replace your entire support team with 4 AI specialists</em></p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-crown"></i></div>
+                    <h3>Jarvis (Main Agent)</h3>
+                    <p>Strategic oversight, complex decision-making, business intelligence</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <h3>Scout (Research Agent)</h3>
+                    <p>Market research, competitor analysis, trend identification</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-hammer"></i></div>
+                    <h3>Mule (Worker Agent)</h3>
+                    <p>Content creation, data processing, routine tasks</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h3>Forge (Technical Agent)</h3>
+                    <p>Development, system integration, technical support</p>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h4>25+ Business Skills Included:</h4>
+                <p>Content creation • Lead generation • Social media management • Customer service automation • Data analysis • Project management • Email marketing • Research • Invoice processing • Calendar scheduling • CRM management • Competitive analysis • SEO optimization • Sales funnel automation • Client onboarding • And 10+ more specialized skills</p>
+            </div>
+
+            <h2>2. Premium Hardware Packages</h2>
+            <p><em>Enterprise-grade workstations optimized for AI operations</em></p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Starter Package</h3>
+                    <div class="price">$5,000-$8,000</div>
+                    <p><strong>Mac Mini Pro Setup</strong></p>
+                    <p>Perfect for: Freelancers, content creators, small agencies</p>
+                    <p>ROI: 3-4X faster content processing</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Professional Package</h3>
+                    <div class="price">$10,000-$15,000</div>
+                    <p><strong>Mac Studio Powerhouse</strong></p>
+                    <p>Perfect for: Marketing agencies, production companies</p>
+                    <p>ROI: Handle 5X more client projects</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <h3>Enterprise Package</h3>
+                    <div class="price">$20,000-$30,000</div>
+                    <p><strong>Mac Studio Pro Beast (512GB RAM!)</strong></p>
+                    <p>Perfect for: Large agencies, enterprise operations</p>
+                    <p>ROI: 400-600% return within first year</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-microchip"></i></div>
+                    <h3>NVIDIA AI Lab</h3>
+                    <div class="price">$25,000-$40,000</div>
+                    <p><strong>DGX Spark Configuration</strong></p>
+                    <p>Perfect for: Tech companies, research institutions</p>
+                    <p>ROI: Innovation leadership and market differentiation</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-chart-line"></i> Dashboard-as-a-Service</h3>
+                <p><strong>$997 one-time license → Earn $300-500/month per client (UNLIMITED clients!)</strong></p>
+                <p>Replace 13 different business tools • Potential: $36,000+/year with just 10 clients</p>
+            </div>
+
+            <h2>4. Home & Family AI Assistant</h2>
+            <div class="service-card">
+                <div class="icon"><i class="fas fa-home"></i></div>
+                <h3>Smart Home Package</h3>
+                <div class="price">$3,000-$5,000</div>
+                <p>Personal AI assistant • Smart home automation • Content creation tools • Family organization • Home office optimization</p>
+                <p><strong>Benefits:</strong> Save 10-15 hours/week, optimize energy usage (save $100-300/month)</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <h1><i class="fas fa-tags"></i> Pricing & Packages</h1>
+            
+            <h2>Recommended Solution Combinations</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-user"></i></div>
+                    <h3>For Freelancers & Solopreneurs</h3>
+                    <div class="price">$15,000-$18,000</div>
+                    <p><strong>Starter Hardware + Basic AI System</strong></p>
+                    <ul>
+                        <li>Monthly Savings: $2,000-4,000</li>
+                        <li>Payback Period: 4-6 months</li>
+                        <li>Yearly Profit: $24,000-48,000</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" style="border: 3px solid var(--primary-gold);">
+                    <div class="icon"><i class="fas fa-star"></i></div>
+                    <h3>For Marketing Agencies</h3>
+                    <div class="price">$25,997</div>
+                    <p><strong>Professional Hardware + Premium AI + Dashboard</strong></p>
+                    <ul>
+                        <li>Monthly Revenue Potential: $5,000-15,000</li>
+                        <li>Payback Period: 2-4 months</li>
+                        <li>Yearly Profit: $60,000-180,000</li>
+                    </ul>
+                    <div style="background: var(--primary-gold); color: var(--primary-dark); padding: 0.5rem; margin-top: 1rem; border-radius: 5px; font-weight: 600;">
+                        MOST POPULAR
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>For Business Coaches</h3>
+                    <div class="price">$15,997</div>
+                    <p><strong>Premium AI System + Dashboard White-Label</strong></p>
+                    <ul>
+                        <li>Client Revenue: $300-500/month per client</li>
+                        <li>With 10 clients: $36,000-60,000/year</li>
+                        <li>Payback Period: 3-5 months</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-industry"></i></div>
+                    <h3>For Enterprise Clients</h3>
+                    <div class="price">$40,000-$60,000</div>
+                    <p><strong>Enterprise Hardware + Enterprise AI</strong></p>
+                    <ul>
+                        <li>Cost Savings: $100,000-300,000/year</li>
+                        <li>Payback Period: 3-6 months</li>
+                        <li>ROI: 300-600% annually</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Complete Pricing Table</h2>
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Solution</th>
+                            <th>Basic</th>
+                            <th>Premium</th>
+                            <th>Enterprise</th>
+                            <th>Custom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AI Agent System</strong></td>
+                            <td>$10,000</td>
+                            <td>$15,000</td>
+                            <td>$20,000</td>
+                            <td>$25,000+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardware - Starter</strong></td>
+                            <td>$5,000</td>
+                            <td>$6,500</td>
+                            <td>$8,000</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardware - Professional</strong></td>
+                            <td>$10,000</td>
+                            <td>$12,500</td>
+                            <td>$15,000</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardware - Enterprise</strong></td>
+                            <td>$20,000</td>
+                            <td>$25,000</td>
+                            <td>$30,000</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardware - NVIDIA Lab</strong></td>
+                            <td>$25,000</td>
+                            <td>$30,000</td>
+                            <td>$40,000</td>
+                            <td>$50,000+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dashboard License</strong></td>
+                            <td>$997</td>
+                            <td>$1,497</td>
+                            <td>$197/month</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Assistant</strong></td>
+                            <td>$3,000</td>
+                            <td>$4,000</td>
+                            <td>$5,000</td>
+                            <td>$7,500+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-gift"></i> Limited-Time Bonuses (Order by March 1st, 2026)</h3>
+                <p><strong>Early Adopter Package - FREE with any Enterprise purchase:</strong></p>
+                <p>• $5,000 additional customization • 6 months extended support • Priority implementation • Lifetime software updates</p>
+                <p><strong>Total Bonus Value: $8,400+</strong></p>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="section">
+            <h1><i class="fas fa-chart-bar"></i> Proven Results & Case Studies</h1>
+            
+            <div class="case-study">
+                <h4><i class="fas fa-trophy"></i> Marketing Agency Transformation</h4>
+                <p><strong>Client:</strong> Digital marketing agency, 15 employees, $50K/month revenue, 25 active clients</p>
+                <p><strong>Investment:</strong> $28,497 (Professional Hardware + Premium AI + Dashboard License)</p>
+                
+                <div class="results">
+                    <div class="result-item">
+                        <div class="result-number">+50%</div>
+                        <div>Revenue Increase</div>
+                        <small>$50K → $75K/month</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">+80%</div>
+                        <div>Client Capacity</div>
+                        <small>25 → 45 clients</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">1,630%</div>
+                        <div>Annual ROI</div>
+                        <small>22-day payback</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">$464,400</div>
+                        <div>Additional Revenue</div>
+                        <small>Per year</small>
+                    </div>
+                </div>
+                
+                <blockquote style="font-style: italic; color: var(--medium-gray); margin-top: 1rem;">
+                    "Kermicle Media didn't just give us tools—they gave us superpowers. We've tripled our client base while actually working fewer hours. Best investment we've ever made."
+                    <br><strong>— Sarah Martinez, CEO, Digital Growth Agency</strong>
+                </blockquote>
+            </div>
+
+            <div class="case-study">
+                <h4><i class="fas fa-user-tie"></i> Business Coach Success Story</h4>
+                <p><strong>Client:</strong> Executive business coach, solo practitioner, $120K/year revenue, 10 clients</p>
+                <p><strong>Investment:</strong> $10,997 (Basic AI System + Dashboard License)</p>
+                
+                <div class="results">
+                    <div class="result-item">
+                        <div class="result-number">+33%</div>
+                        <div>Fee Increase</div>
+                        <small>$1,200 → $1,600/month</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">+25%</div>
+                        <div>Client Retention</div>
+                        <small>70% → 95%</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">873%</div>
+                        <div>Annual ROI</div>
+                        <small>1.4 month payback</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">$96,000</div>
+                        <div>Revenue Increase</div>
+                        <small>Per year</small>
+                    </div>
+                </div>
+                
+                <blockquote style="font-style: italic; color: var(--medium-gray); margin-top: 1rem;">
+                    "The AI system transformed me from a coach into a complete business transformation consultant. I've had to turn away new clients because I'm booked solid, and I'm charging 40% more than before."
+                    <br><strong>— Michael Chen, Executive Business Coach</strong>
+                </blockquote>
+            </div>
+
+            <div class="case-study">
+                <h4><i class="fas fa-video"></i> Content Creator Breakthrough</h4>
+                <p><strong>Client:</strong> YouTube creator, 100K followers, $80K/year revenue, content production bottlenecks</p>
+                <p><strong>Investment:</strong> $22,500 (Professional Hardware + Basic AI System)</p>
+                
+                <div class="results">
+                    <div class="result-item">
+                        <div class="result-number">+300%</div>
+                        <div>Content Output</div>
+                        <small>Triple production</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">-60%</div>
+                        <div>Work Hours</div>
+                        <small>50 → 20 hours/week</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">533%</div>
+                        <div>Annual ROI</div>
+                        <small>2.3 month payback</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">+150%</div>
+                        <div>Revenue Growth</div>
+                        <small>$80K → $200K/year</small>
+                    </div>
+                </div>
+                
+                <blockquote style="font-style: italic; color: var(--medium-gray); margin-top: 1rem;">
+                    "I went from being overwhelmed and burned out to having an AI production team that works while I sleep. I'm finally building the business I dreamed of."
+                    <br><strong>— Jessica Torres, Digital Content Creator</strong>
+                </blockquote>
+            </div>
+
+            <div class="case-study">
+                <h4><i class="fas fa-building"></i> Enterprise Transformation</h4>
+                <p><strong>Client:</strong> Mid-size consulting firm, 50 employees, $2M/year revenue, multiple locations</p>
+                <p><strong>Investment:</strong> $45,000 (Enterprise Hardware + Enterprise AI System)</p>
+                
+                <div class="results">
+                    <div class="result-item">
+                        <div class="result-number">+65%</div>
+                        <div>Operational Efficiency</div>
+                        <small>Across all locations</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">+60%</div>
+                        <div>Revenue Growth</div>
+                        <small>$2M → $3.2M/year</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">3,556%</div>
+                        <div>Annual ROI</div>
+                        <small>13-day payback</small>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">$1.6M</div>
+                        <div>Profit Increase</div>
+                        <small>Per year</small>
+                    </div>
+                </div>
+                
+                <blockquote style="font-style: italic; color: var(--medium-gray); margin-top: 1rem;">
+                    "We're now competing directly with firms 10X our size and winning. The AI agents handle complex analysis that used to require entire teams."
+                    <br><strong>— Robert Kim, Managing Partner, Strategic Solutions Group</strong>
+                </blockquote>
+            </div>
+
+            <h2><i class="fas fa-star"></i> Client Testimonials</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-quote-left"></i></div>
+                    <h4>"Game-Changing Investment"</h4>
+                    <p><em>"In 30 years of business, I've never seen technology that delivers this kind of immediate impact. ROI was positive within 3 weeks."</em></p>
+                    <strong>— David Thompson, CEO</strong>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-quote-left"></i></div>
+                    <h4>"Competitive Advantage"</h4>
+                    <p><em>"While our competitors are still manually managing their operations, we're using AI to deliver faster, better, cheaper services."</em></p>
+                    <strong>— Amanda Rodriguez, Founder</strong>
+                </div>
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-quote-left"></i></div>
+                    <h4>"Life-Changing"</h4>
+                    <p><em>"I got my life back. I work half the hours and make twice the money. The AI system handles everything I used to stress about."</em></p>
+                    <strong>— Mark Stevens, Consultant</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section">
+            <h1><i class="fas fa-cog"></i> Implementation Process</h1>
+            
+            <h2>Your 48-Hour Transformation Timeline</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Hour 0: Initial Consultation (Free)</h4>
+                    <p>Business needs assessment • Current workflow analysis • ROI projection calculation • Custom solution design • Investment options review</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Hours 1-4: System Design & Planning</h4>
+                    <p>Technical specifications finalized • Custom skill requirements identified • Integration points mapped • Timeline established • Team training scheduled</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Hours 5-24: System Setup & Configuration</h4>
+                    <p>Hardware delivery and installation • AI agent system deployment • Custom skill development • Dashboard branding • Integration with existing systems</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Hours 25-36: Testing & Optimization</h4>
+                    <p>System functionality testing • Performance optimization • Security configuration • Backup and disaster recovery setup • Quality assurance verification</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Hours 37-48: Training & Go-Live</h4>
+                    <p>Team training sessions • User account setup • Go-live support and monitoring • Initial optimization • Success metrics baseline</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4>Week 2-4: Optimization & Fine-Tuning</h4>
+                    <p>Performance monitoring and adjustment • Additional skill training • Workflow optimization • Advanced feature activation • ROI measurement and reporting</p>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-check-circle"></i> What's Included in Every Implementation</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-tools"></i></div>
+                    <h3>Complete System Setup</h3>
+                    <ul>
+                        <li>Professional hardware installation</li>
+                        <li>AI agent system configuration</li>
+                        <li>Dashboard customization and branding</li>
+                        <li>Integration with existing tools</li>
+                        <li>Security and backup configuration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Comprehensive Training</h3>
+                    <ul>
+                        <li>Executive overview session</li>
+                        <li>Team member training workshops</li>
+                        <li>Administrator certification</li>
+                        <li>User documentation and guides</li>
+                        <li>Video tutorial library access</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-headset"></i></div>
+                    <h3>Ongoing Support</h3>
+                    <ul>
+                        <li>24/7 technical support hotline</li>
+                        <li>Regular system updates and maintenance</li>
+                        <li>Performance monitoring and optimization</li>
+                        <li>Dedicated account manager</li>
+                        <li>Monthly strategy review calls</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Success Guarantee</h3>
+                    <ul>
+                        <li>30-day money-back guarantee</li>
+                        <li>Performance benchmarking</li>
+                        <li>ROI measurement and reporting</li>
+                        <li>Continuous improvement recommendations</li>
+                        <li>Satisfaction guarantee</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How is this different from other AI tools like ChatGPT?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>While ChatGPT is a conversational tool, our system is a complete business automation platform. We provide specialized AI agents that are trained for specific business functions, integrated with your existing workflows, and capable of taking actions on your behalf—not just providing information.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do I need technical expertise to use this system?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No. Our system is designed for business users, not technical experts. We provide complete setup, training, and ongoing support. Most clients are fully operational within 48 hours with no technical knowledge required.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Will this replace my employees?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our AI agents augment and empower your human team rather than replace them. They handle repetitive, time-consuming tasks so your people can focus on strategy, creativity, and high-value activities that require human judgment and relationship skills.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is this really a one-time payment?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>For the AI system and hardware, yes—it's a one-time investment. The only ongoing costs are optional support services ($200/month) and any custom development work you request. The dashboard licensing option also offers unlimited client installations for a one-time fee.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What kind of ROI can I expect?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Based on our client data, typical ROI ranges from 300-1000%+ annually. Small businesses average 540% ROI, medium businesses average 960% ROI, and enterprise clients average over 1000% ROI. Individual results vary based on implementation and utilization.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How quickly will I see results?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Most clients see immediate time savings within 24 hours of go-live. Measurable ROI typically appears within 2-4 weeks, with full system optimization achieved within 90 days. Revenue improvements often begin within the first month.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How secure is the system?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Security is our top priority. All data is encrypted in transit and at rest, we use enterprise-grade security protocols, and the system can operate entirely on your own infrastructure if required. We're compliant with GDPR, HIPAA, and SOC 2 standards.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I pay in installments?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. We offer flexible payment plans including monthly installments over 6, 12, or 24 months. We also accept purchase orders from established businesses and can work with your finance team on custom arrangements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h1><i class="fas fa-phone"></i> Ready to Transform Your Business?</h1>
+            
+            <div class="highlight-box">
+                <h3>The businesses that adopt AI systems today will dominate their markets tomorrow.</h3>
+                <p><strong>Your choice:</strong> ❌ Stay manual and watch competitors pull ahead • ✅ Transform today and become the market leader</p>
+            </div>
+            
+            <h2>Your Options:</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-comments"></i></div>
+                    <h3>Free Strategy Session (Recommended)</h3>
+                    <p><strong>What:</strong> 30-minute consultation to assess your needs</p>
+                    <p><strong>Investment:</strong> Completely free, no obligation</p>
+                    <p><strong>Outcome:</strong> Custom ROI projection and implementation plan</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Live Demonstration</h3>
+                    <p><strong>What:</strong> In-depth demo of AI agents and dashboard</p>
+                    <p><strong>Time:</strong> 45-60 minutes at your convenience</p>
+                    <p><strong>Outcome:</strong> See the system with your actual business scenarios</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Pilot Program</h3>
+                    <p><strong>What:</strong> 30-day trial with money-back guarantee</p>
+                    <p><strong>Investment:</strong> 50% down, balance on approval</p>
+                    <p><strong>Outcome:</strong> Risk-free way to experience the full system</p>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="icon"><i class="fas fa-user"></i></div>
+                    <h3>Jeremy Kermicle</h3>
+                    <p>Founder & AI Strategist</p>
+                    <p><strong>Kermicle Media</strong></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:alfred.pennyworth32@gmail.com" style="color: var(--primary-gold);">alfred.pennyworth32@gmail.com</a></p>
+                    <p><strong>Response Guarantee:</strong> < 2 hours</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon"><i class="fas fa-paper-plane"></i></div>
+                    <h3>Telegram</h3>
+                    <p><strong>@Ifakedit1</strong></p>
+                    <p>For immediate response</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <h3>Website</h3>
+                    <p><strong>kermiclemedia.com</strong></p>
+                    <p>Eastern Time Zone, USA</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-clock"></i> Limited-Time Bonuses End March 1st, 2026</h3>
+                <p>✅ $5,000 additional customization (FREE) • ✅ 6 months extended support ($2,400 value) • ✅ Priority implementation (skip the queue) • ✅ Lifetime software updates ($1,000+/year value)</p>
+                <p><strong>Total Bonus Value: $8,400+</strong></p>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <h2>Next Steps</h2>
+                <p style="margin-bottom: 2rem;">Ready to begin your transformation? Choose your preferred way to get started:</p>
+                
+                <a href="mailto:alfred.pennyworth32@gmail.com?subject=Free AI Strategy Session Request" class="btn" style="margin: 0.5rem;">
+                    <i class="fas fa-calendar"></i> Schedule Free Strategy Session
+                </a>
+                
+                <a href="mailto:alfred.pennyworth32@gmail.com?subject=Live Demo Request" class="btn btn-secondary" style="margin: 0.5rem;">
+                    <i class="fas fa-play"></i> Request Live Demo
+                </a>
+            </div>
+        </section>
     </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-left">© 2026 <span>Kermicle Media</span> — kermiclemedia.com</div>
-    <div class="footer-right">Crafted with precision. Every frame matters.</div>
-  </div>
-</footer>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            KERMICLE MEDIA
+        </div>
+        <p>Transforming businesses through intelligent automation since 2024.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            © 2026 Kermicle Media. All rights reserved. | Last Updated: February 19, 2026
+        </p>
+    </div>
 
-<script>
-// Nav scroll
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)
-})
-
-// Close mobile nav on link click
-document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))
-})
-
-// Scroll animations
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
-},{threshold:0.15})
-document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el))
-
-// Stat counter animation
-const statObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.stat-num').forEach(num=>{
-        const text=num.textContent;const match=text.match(/(\d+)/);
-        if(match){
-          const target=parseInt(match[1]);const suffix=text.replace(match[1],'');
-          let current=0;const step=Math.ceil(target/40);
-          const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}num.textContent=current+suffix},30)
+    <!-- JavaScript -->
+    <script>
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update URL without page reload
+            window.history.pushState({}, '', `#${sectionId}`);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu if open
+            document.getElementById('navMenu').classList.remove('active');
         }
-      })
-      statObserver.unobserve(e.target)
-    }
-  })
-},{threshold:0.3})
-document.querySelectorAll('.stats').forEach(el=>statObserver.observe(el))
-</script>
 
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Toggle answer visibility
+            answer.classList.toggle('active');
+            
+            // Rotate icon
+            if (answer.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Handle initial page load
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+        });
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('overview');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href').substring(1);
+                if (document.getElementById(targetId)) {
+                    showSection(targetId);
+                }
+            }
+        });
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .case-study, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.service-card, .case-study, .timeline-item');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            setTimeout(animateOnScroll, 100);
+        });
+
+        // Email tracking (optional)
+        function trackEmail(action) {
+            // Add analytics tracking here if needed
+            console.log('Email action:', action);
+        }
+    </script>
 </body>
 </html>
