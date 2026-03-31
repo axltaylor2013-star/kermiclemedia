@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Kermicle Media</title>
+<meta name="description" content="Insights on AI automation, farming and outdoor tech, and building passive income online. From the team at Kermicle Media.">
+<link rel="canonical" href="https://kermiclemedia.com/blog/">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e0e0e0;line-height:1.6;min-height:100vh}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 50%,rgba(16,185,129,.08)0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(16,185,129,.05)0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(234,179,8,.03)0%,transparent 50%);pointer-events:none;z-index:0}nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(234,179,8,.2);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.3rem;font-weight:700;color:#eab308;text-decoration:none}.logo span{color:#fff}.nl{display:flex;gap:1.5rem;list-style:none}.nl a{color:#a0a0a0;text-decoration:none;font-size:.9rem}.nl a:hover{color:#eab308}.nl a.active{color:#eab308}.nl .cta{background:#eab308;color:#0a0a0a;padding:.5rem 1.2rem;border-radius:6px;font-weight:600}.bw{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:3rem 1.5rem 4rem}.bh{text-align:center;margin-bottom:3rem}.bh h1{font-size:2.5rem;color:#fff;margin-bottom:.75rem}.bh p{color:#888;font-size:1.1rem;max-width:600px;margin:0 auto}.ft{display:flex;justify-content:center;gap:.75rem;margin-bottom:2.5rem;flex-wrap:wrap}.ft button{padding:.5rem 1.25rem;border-radius:25px;border:1px solid rgba(255,255,255,.12);background:transparent;color:#aaa;font-size:.9rem;cursor:pointer;transition:all .3s;font-family:inherit}.ft button:hover,.ft button.active{background:rgba(234,179,8,.15);border-color:rgba(234,179,8,.4);color:#eab308}.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.75rem}.pc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.75rem;text-decoration:none;display:flex;flex-direction:column;transition:border-color .3s,transform .3s}.pc:hover{border-color:rgba(234,179,8,.3);transform:translateY(-3px)}.pc .tag{display:inline-block;font-size:.75rem;color:#eab308;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:.75rem}.pc h2{font-size:1.2rem;color:#fff;line-height:1.4;margin-bottom:.75rem;font-weight:600}.pc .ex{color:#999;font-size:.9rem;line-height:1.5;flex-grow:1;margin-bottom:1rem}.pc .meta{color:#666;font-size:.8rem}footer{position:relative;z-index:1;border-top:1px solid rgba(234,179,8,.15);padding:2rem;text-align:center;color:#666;font-size:.85rem}footer a{color:#eab308;text-decoration:none}@media(max-width:768px){.bh h1{font-size:1.8rem}.pg{grid-template-columns:1fr}.nl{display:none}}</style>
+</head>
+<body>
+<nav><a href="https://kermiclemedia.com" class="logo">&#9889; <span>KERMICLE</span> MEDIA</a><ul class="nl"><li><a href="https://kermiclemedia.com">Home</a></li><li><a href="https://kermiclemedia.com/blog/" class="active">Blog</a></li><li><a href="https://kermiclemedia.com#services">Services</a></li><li><a href="https://kermiclemedia.com#pricing">Pricing</a></li><li><a href="https://kermiclemedia.com#overview" class="cta">Get Started</a></li></ul></nav>
+<main class="bw">
+<div class="bh"><h1>The Kermicle Blog</h1><p>AI automation, outdoor tech, and real talk about making money online.</p></div>
+<div class="ft">
+<button class="active" onclick="filterPosts('all')">All Posts</button>
+<button onclick="filterPosts('ai-tech')">AI &amp; Tech</button>
+<button onclick="filterPosts('farming-outdoors')">Farming &amp; Outdoors</button>
+<button onclick="filterPosts('make-money')">Make Money Online</button>
+</div>
+<div class="pg" id="pg">
+<a href="/blog/how-to-use-local-llms-to-automate-your-business.html" class="pc" data-category="ai-tech">
+<span class="tag">AI &amp; Tech</span>
+<h2>How to Use Local LLMs to Automate Your Business</h2>
+<p class="ex">Learn how local LLMs can automate tasks, save time, and transform your small business without expensive cloud subscriptions.</p>
+<span class="meta">March 31, 2026 &middot; 7 min read</span>
+</a>
+</div>
+</main>
+<footer><p>&copy; 2026 <a href="https://kermiclemedia.com">Kermicle Media</a>. All rights reserved.</p><p style="margin-top:0.5rem"><a href="https://kermiclemedia.com/privacy-policy.html">Privacy Policy</a> &middot; <a href="https://kermiclemedia.com/terms-of-service.html">Terms of Service</a></p></footer>
+<script>function filterPosts(c){const cards=document.querySelectorAll('.pc');const tabs=document.querySelectorAll('.ft button');tabs.forEach(t=>t.classList.remove('active'));event.target.classList.add('active');cards.forEach(card=>{if(c==='all'||card.dataset.category===c){card.style.display='flex'}else{card.style.display='none'}})}</script>
+</body></html>
