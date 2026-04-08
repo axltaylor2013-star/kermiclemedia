@@ -4,40 +4,380 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog - Kermicle Media</title>
-<meta name="description" content="AI automation insights, farming & outdoor tips, and online income strategies from Kermicle Media.">
-<link rel="canonical" href="https://kermiclemedia.com/blog/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e0e0e0;line-height:1.8;min-height:100vh}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 50%,rgba(16,185,129,.08)0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(16,185,129,.05)0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(234,179,8,.03)0%,transparent 50%);pointer-events:none;z-index:0}nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(234,179,8,.2);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.3rem;font-weight:700;color:#eab308;text-decoration:none}.logo span{color:#fff}.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:#a0a0a0;text-decoration:none;font-size:.9rem}.nav-links a:hover{color:#eab308}.nav-links .cta{background:#eab308;color:#0a0a0a;padding:.5rem 1.2rem;border-radius:6px;font-weight:600}.bh{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:3rem 1.5rem 4rem}.bh h1{font-size:2.4rem;font-weight:700;color:#fff;margin-bottom:.5rem}.bh .sub{color:#888;font-size:1.1rem;margin-bottom:3rem}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}.card{background:rgba(255,255,255,.03);border:1px solid rgba(234,179,8,.15);border-radius:12px;padding:1.5rem;transition:border-color .2s,transform .2s}.card:hover{border-color:rgba(234,179,8,.4);transform:translateY(-2px)}.card .tag{display:inline-block;background:rgba(234,179,8,.15);color:#eab308;padding:.2rem .6rem;border-radius:15px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem}.card h2{font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:.5rem;line-height:1.4}.card h2 a{color:#fff;text-decoration:none}.card h2 a:hover{color:#eab308}.card .meta{color:#888;font-size:.85rem;margin-bottom:.75rem}.card .excerpt{color:#aaa;font-size:.95rem;line-height:1.6}footer{position:relative;z-index:1;border-top:1px solid rgba(234,179,8,.15);padding:2rem;text-align:center;color:#666;font-size:.85rem}footer a{color:#eab308;text-decoration:none}@media(max-width:768px){.bh h1{font-size:1.8rem}.grid{grid-template-columns:1fr}.nav-links{display:none}}</style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #e0e0e0;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(16, 185, 129, .08) 0%, transparent 50%), 
+              radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, .05) 0%, transparent 50%), 
+              radial-gradient(ellipse at 50% 80%, rgba(234, 179, 8, .03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, .95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(234, 179, 8, .2);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #eab308;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+.nav-links a:hover {
+  color: #eab308;
+}
+
+.nav-links .cta {
+  background: #eab308;
+  color: #0a0a0a;
+  padding: .5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.aw {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.bc {
+  font-size: .85rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.bc a {
+  color: #eab308;
+  text-decoration: none;
+}
+
+.ah {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(234, 179, 8, .15);
+  padding-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.am {
+  color: #888;
+  font-size: .9rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.blog-card {
+  background: linear-gradient(135deg, rgba(234, 179, 8, .1), rgba(16, 185, 129, .05));
+  border: 1px solid rgba(234, 179, 8, .3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  border-color: #eab308;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(234, 179, 8, .1);
+}
+
+.blog-card .category {
+  display: inline-block;
+  background: rgba(234, 179, 8, .15);
+  color: #eab308;
+  padding: .25rem .75rem;
+  border-radius: 20px;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.blog-card h3 {
+  color: #fff;
+  margin-bottom: .75rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.blog-card p {
+  color: #a0a0a0;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.blog-card a {
+  display: inline-block;
+  background: #eab308;
+  color: #0a0a0a;
+  padding: .75rem 2rem;
+  border-radius:: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.blog-card a:hover {
+  background: #f4c430;
+}
+
+factor {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(234, 179, 8, .15);
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: .85rem;
+}
+
+factor a {
+  color: #eab308;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .aw {
+    padding: 2rem 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  
+  ”@nan grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
 <nav><a href="https://kermiclemedia.com" class="logo">&#9889; <span>KERMICLE</span> MEDIA</a><ul class="nav-links"><li><a href="https://kermiclemedia.com">Home</a></li><li><a href="https://kermiclemedia.com/blog/">Blog</a></li><li><a href="https://kermiclemedia.com#services">Services</a></li><li><a href="https://kermiclemedia.com#pricing">Pricing</a></li><li><a href="https://kermiclemedia.com#overview" class="cta">Get Started</a></li></ul></nav>
-<main class="bh">
+<main class="aw">
+<div class="bc"><a href="https://kermiclemedia.com">Home</a> &rsaquo; Blog</div>
+<header class="ah">
 <h1>Blog</h1>
-<p class="sub">AI automation, farming &amp; outdoor life, and smart ways to earn online.</p>
-<div class="grid">
+<div class="am">Insights on AI, farming, business automation, and building passive income</div>
+</header>
 
-<div class="card">
-<span class="tag">AI &amp; Tech</span>
-<h2><a href="https://kermiclemedia.com/blog/how-to-run-ai-agents-on-your-local-network-without-cloud-costs.html">How to Run AI Agents on Your Local Network Without Cloud Costs</a></h2>
-<div class="meta">April 5, 2026 &middot; 8 min read</div>
-<p class="excerpt">Deploy AI agents on your own hardware using Ollama and open-source models. Save thousands on API costs while keeping your data completely private.</p>
-</div>
+<div class="blog-grid">
 
-<div class="card">
-<span class="tag">Farming &amp; Outdoors</span>
-<h2><a href="https://kermiclemedia.com/blog/how-to-set-up-trail-cameras-for-year-round-farm-security.html">How to Set Up Trail Cameras for Year-Round Farm Security</a></h2>
-<div class="meta">April 5, 2026 &middot; 8 min read</div>
-<p class="excerpt">A practical guide to using trail cameras for farm security and wildlife monitoring. Covers placement strategy, solar power, cellular connectivity, and maintenance.</p>
-</div>
+<article class="blog-card">
+<span class="category">Make Money Online</span>
+<h3>Affiliate Marketing For Beginners</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/affiliate-marketing-for-beginners.html">Read Article</a>
+</article>
 
-<div class="card">
-<span class="tag">Make Money Online</span>
-<h2><a href="https://kermiclemedia.com/blog/how-to-build-a-passive-income-newsletter-with-ai-in-2026.html">How to Build a Passive Income Newsletter With AI in 2026</a></h2>
-<div class="meta">April 5, 2026 &middot; 8 min read</div>
-<p class="excerpt">Step-by-step guide to launching an AI-assisted email newsletter that generates passive income through ads, affiliates, and paid subscriptions.</p>
-</div>
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>AI Agents Explained: What They Are & Why They Matter</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/ai-agents-explained-what-they-are-why-they-matter.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>AI Automate Small Business Invoicing Bookkeeping 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/ai-automate-small-business-invoicing-bookkeeping-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>Best Trail Cameras For Farm Security 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/best-trail-cameras-farm-security-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>Best Trail Cameras Farm Security Wildlife 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/best-trail-cameras-farm-security-wildlife-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>Dove Field Preparation Planting Guide Hunting 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/dove-field-preparation-planting-guide-hunting-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>Farm Pond Management Guide 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/farm-pond-management-guide-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Make Money Online</span>
+<h3>How To Build A Passive Income Newsletter With AI In 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/how-to-build-a-passive-income-newsletter-with-ai-in-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Make Money Online</span>
+<h3>How To Build Passive Income Website From Scratch</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/how-to-build-passive-income-website-from-scratch.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>How To Run AI Agents On Your Local Network Without Cloud Costs</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/how-to-run-ai-agents-on-your-local-network-without-cloud-costs.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>How To Set Up Trail Cameras For Year Round Farm Security</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/how-to-set-up-trail-cameras-for-year-round-farm-security.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>How To Use Local LLMs To Automate Your Business</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/how-to-use-local-llms-to-automate-your-business.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>No Code AI Workflows Automate Tasks 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/no-code-ai-workflows-automate-tasks-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>Ollama vs LM Studio Local AI</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/ollama-vs-lm-studio-local-ai.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Make Money Online</span>
+<h3>Passive Income Blog With AI 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/passive-income-blog-with-ai-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Make Money Online</span>
+<h3>Print On Demand Business Guide 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/print-on-demand-business-guide-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>Smart Glasses AI Wearable Tech 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/smart-glasses-ai-wearable-tech-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>Sunflower Food Plots Planting Guide</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/sunflower-food-plots-planting-guide.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">AI & Tech</span>
+<h3>How To Build An AI Chatbot For Your Small Business Website Without Code</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/build-ai-chatbot-small-business-no-code-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Farming & Outdoors</span>
+<h3>Best UTVs For Small Farm Work: What To Look For In 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/best-utvs-small-farm-work-2026.html">Read Article</a>
+</article>
+
+<article class="blog-card">
+<span class="category">Make Money Online</span>
+<h3>How To Create And Sell Digital Products Using AI Tools In 2026</h3>
+<p>Read our latest insights and guides.</p>
+<a href="/blog/create-sell-digital-products-ai-2026.html">Read Article</a>
+</article>
 
 </div>
 </main>
-<footer><p>&copy; 2026 <a href="https://kermiclemedia.com">Kermicle Media</a>. All rights reserved.</p><p style="margin-top:0.5rem"><a href="https://kermiclemedia.com/privacy-policy.html">Privacy Policy</a> &middot; <a href="https://kermiclemedia.com/terms-of-service.html">Terms of Service</a></p></footer>
-</body></html>
+
+<footer><p>&copy; 2026 <a href="https://kermiclemedia.com">Kermicle Media</a>. All rights reserved.</p></footer>
+</body>
+</html>
