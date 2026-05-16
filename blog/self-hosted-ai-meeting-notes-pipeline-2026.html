@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build a Self-Hosted AI Meeting Notes Pipeline in 2026 (No Subscriptions) - Kermicle Media Blog</title>
+<meta name="description" content="Build a private, self-hosted AI meeting notes pipeline with Whisper and Ollama. No subscriptions, full privacy, runs on your own hardware in an afternoon.">
+<link rel="canonical" href="https://kermiclemedia.com/blog/self-hosted-ai-meeting-notes-pipeline-2026.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e0e0e0;line-height:1.8;min-height:100vh}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 50%,rgba(16,185,129,.08)0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(16,185,129,.05)0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(234,179,8,.03)0%,transparent 50%);pointer-events:none;z-index:0}nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(234,179,8,.2);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.3rem;font-weight:700;color:#eab308;text-decoration:none}.logo span{color:#fff}.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:#a0a0a0;text-decoration:none;font-size:.9rem}.nav-links a:hover{color:#eab308}.nav-links .cta{background:#eab308;color:#0a0a0a;padding:.5rem 1.2rem;border-radius:6px;font-weight:600}.aw{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:3rem 1.5rem 4rem}.bc{font-size:.85rem;color:#888;margin-bottom:2rem}.bc a{color:#eab308;text-decoration:none}.ah{margin-bottom:2.5rem;border-bottom:1px solid rgba(234,179,8,.15);padding-bottom:2rem}.ct{display:inline-block;background:rgba(234,179,8,.15);color:#eab308;padding:.25rem .75rem;border-radius:20px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}h1{font-size:2.4rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:1rem}.am{color:#888;font-size:.9rem}.ac h2{font-size:1.6rem;font-weight:600;color:#eab308;margin:2.5rem 0 1rem;padding-top:1rem}.ac h3{font-size:1.25rem;font-weight:600;color:#fff;margin:2rem 0 .75rem}.ac p{margin-bottom:1.2rem;color:#d0d0d0;font-size:1.05rem}.ac ul{margin:1rem 0 1.5rem 1.5rem;color:#d0d0d0}.ac li{margin-bottom:.5rem;font-size:1.05rem}.ac strong{color:#fff}.ac a{color:#eab308}.cb{background:linear-gradient(135deg,rgba(234,179,8,.1),rgba(16,185,129,.05));border:1px solid rgba(234,179,8,.3);border-radius:12px;padding:2rem;margin:3rem 0;text-align:center}.cb h3{color:#eab308;margin-bottom:.75rem}.cb p{color:#aaa;margin-bottom:1.25rem}.cb a{display:inline-block;background:#eab308;color:#0a0a0a;padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:600}footer{position:relative;z-index:1;border-top:1px solid rgba(234,179,8,.15);padding:2rem;text-align:center;color:#666;font-size:.85rem}footer a{color:#eab308;text-decoration:none}@media(max-width:768px){h1{font-size:1.8rem}.aw{padding:2rem 1rem}.nav-links{display:none}}</style>
+</head>
+<body>
+<nav><a href="https://kermiclemedia.com" class="logo">&#9889; <span>KERMICLE</span> MEDIA</a><ul class="nav-links"><li><a href="https://kermiclemedia.com">Home</a></li><li><a href="https://kermiclemedia.com/blog/">Blog</a></li><li><a href="https://kermiclemedia.com#services">Services</a></li><li><a href="https://kermiclemedia.com#pricing">Pricing</a></li><li><a href="https://kermiclemedia.com#overview" class="cta">Get Started</a></li></ul></nav>
+<main class="aw"><div class="bc"><a href="https://kermiclemedia.com">Home</a> &rsaquo; <a href="https://kermiclemedia.com/blog/">Blog</a> &rsaquo; AI &amp; Tech</div>
+<article><header class="ah"><span class="ct">AI &amp; Tech</span><h1>How to Build a Self-Hosted AI Meeting Notes Pipeline in 2026 (No Subscriptions)</h1><div class="am"><span>May 16, 2026</span> &middot; 6 min read</div></header>
+<div class="ac">
+<p>Pay $30 a month for Otter, $25 for Fathom, $20 for Granola — and the recordings, transcripts, and summaries of your most sensitive conversations end up sitting on a server you don't control. For a lot of people that tradeoff was acceptable when the local AI models couldn't keep up. They can now.</p>
+
+<p>Whisper-class transcription runs on a five-year-old laptop. Llama 3.3 70B and Qwen 2.5 32B summarize meeting transcripts as well as anything you'd get from a hosted service. You can wire the whole pipeline together in an afternoon, run it on hardware you already own, and never send another sentence of a private conversation to a third party.</p>
+
+<p>Here's exactly how to do it.</p>
+
+<h2>What you're actually building</h2>
+
+<p>The pipeline has four jobs to do. It needs to capture audio from your meetings (whether that's a Zoom call, an in-person conversation, or a phone call). It needs to transcribe that audio into text. It needs to summarize the transcript into useful notes — decisions, action items, follow-ups. And it needs to store everything in a way you can search later.</p>
+
+<p>Every one of those jobs can be handled by open-source software running on a local machine. Total cost: the electricity to run the computer.</p>
+
+<h2>Hardware: what you really need</h2>
+
+<p>You don't need a server rack. Here's the actual minimum for each piece:</p>
+
+<p><strong>For transcription:</strong> Any Mac from 2020 onward, or any PC with 16 GB of RAM and a modern CPU. Whisper's small and medium models run fine on CPU. If you have a GPU with 6 GB of VRAM or more, transcription happens 5 to 10 times faster, but it's not required.</p>
+
+<p><strong>For summarization:</strong> This is where you need a bit more horsepower. An M-series Mac with 32 GB of unified memory will run a 32B-parameter model at usable speeds. A PC with an Nvidia RTX 3090 or 4090 (24 GB VRAM) handles the same models. If you have less memory, you can drop down to a 7B or 14B model and still get good results — they just won't summarize quite as crisply.</p>
+
+<p><strong>For storage:</strong> Any laptop has enough disk. A year's worth of meeting audio, transcripts, and summaries is maybe 50 GB.</p>
+
+<p>If your existing computer can't handle this, a refurbished Mac Mini with 32 GB of RAM costs less than a year of Otter Business plus Fathom.</p>
+
+<h2>The software stack</h2>
+
+<p>You're going to install five things. None of them require accounts, subscriptions, or telemetry.</p>
+
+<h3>1. Whisper.cpp for transcription</h3>
+
+<p>Whisper.cpp is a C++ port of OpenAI's Whisper speech-to-text model. It's faster than the Python version, runs efficiently on Apple Silicon and CPUs, and supports streaming. Clone the repo, build it, and download the model you want.</p>
+
+<p>For most meeting audio, the <strong>medium</strong> model (about 1.5 GB) hits the sweet spot of accuracy and speed. If you have a beefy machine, use <strong>large-v3</strong> (about 3 GB) for the best quality. The <strong>small</strong> model is fine for clear audio and runs on basically anything.</p>
+
+<p>If you want speaker diarization — "who said what" — bolt on <strong>WhisperX</strong>, which combines Whisper with pyannote-audio. It's slightly more complex to set up but it's the difference between "we should follow up on pricing" and "Sarah said we should follow up on pricing." For meeting notes, that matters.</p>
+
+<h3>2. Ollama for the summarization model</h3>
+
+<p>Ollama is the easiest way to run local LLMs. Install it, then pull a model. For meeting summarization, three models stand out as of mid-2026:</p>
+
+<ul>
+<li><strong>Qwen 2.5 32B Instruct</strong> — best overall summarizer in the under-40B class. Handles long contexts well. ~20 GB.</li>
+<li><strong>Llama 3.3 70B Instruct</strong> — better at nuance and tone, but you need 48 GB+ of memory to run it at decent speed. ~40 GB quantized.</li>
+<li><strong>Gemma 3 27B</strong> — surprisingly capable for its size, fast, and uses less memory than Qwen. ~16 GB.</li>
+</ul>
+
+<p>Start with Gemma 3 27B. If your summaries feel surface-level, upgrade.</p>
+
+<h3>3. Audio capture</h3>
+
+<p>For Zoom, Google Meet, Teams, and other browser-based meetings, install <strong>BlackHole</strong> (Mac) or <strong>VB-Audio Cable</strong> (Windows). These are virtual audio devices that let you route your system audio plus your microphone into a single stream you can record.</p>
+
+<p>For in-person meetings, any decent USB microphone works. A Yeti Nano or a $40 boundary mic on a conference table captures plenty of audio for Whisper.</p>
+
+<p>For recording, <strong>Audio Hijack</strong> (Mac) or <strong>OBS</strong> (cross-platform) saves the audio to a file with one click.</p>
+
+<h3>4. A glue script</h3>
+
+<p>This is the part most people skip and then regret. Write a 30-line bash or Python script that does this when a new audio file appears in a folder:</p>
+
+<ul>
+<li>Runs Whisper.cpp on the file to produce a transcript.</li>
+<li>Pipes the transcript into Ollama with a summarization prompt.</li>
+<li>Saves the transcript and summary to a date-stamped folder.</li>
+<li>Optionally appends the summary to a daily note in Obsidian or your tool of choice.</li>
+</ul>
+
+<p>Use cron, launchd, or a folder-watcher like <strong>fswatch</strong> to trigger the script automatically. Now every time you drop a recording into the folder, you get notes a few minutes later with no manual steps.</p>
+
+<h3>5. A search layer (optional but worth it)</h3>
+
+<p>After a few months you'll have hundreds of transcripts. <strong>Obsidian</strong> with the built-in search is good enough for most people. If you want semantic search ("find the meeting where we talked about pricing for enterprise"), index your transcripts with a local embedding model like <strong>nomic-embed-text</strong> via Ollama and store the vectors in <strong>ChromaDB</strong> or <strong>SQLite-VSS</strong>. Total setup: about 20 lines of Python.</p>
+
+<h2>The summarization prompt that actually works</h2>
+
+<p>Most people get bad meeting summaries because they use a bad prompt. "Summarize this meeting" gets you a useless paragraph. Try this structure instead:</p>
+
+<p><strong>"You are an executive assistant taking notes for an attendee who could not attend. Read this transcript and produce: (1) a 3-sentence summary of what the meeting was about and what was decided, (2) a list of decisions made, (3) a list of action items with the owner if mentioned, (4) a list of open questions that were raised but not resolved. Be specific. Quote names and numbers. Do not add anything not in the transcript."</strong>
+
+<p>This works because it gives the model a role, a reader, and a concrete output structure. The "do not add anything not in the transcript" line cuts down on hallucination substantially.</p>
+
+<h2>Privacy: what you actually get</h2>
+
+<p>Here's what's never leaving your machine when you run this pipeline:</p>
+
+<ul>
+<li>The raw audio recordings.</li>
+<li>The transcripts (which include verbatim speech).</li>
+<li>The summaries (which include action items and decisions).</li>
+<li>The search index (which encodes the meaning of everything you've ever said).</li>
+</ul>
+
+<p>That last bullet matters more than people realize. Hosted meeting tools don't just store your transcripts — they often use them to improve their models. Even if they don't, breach disclosures from the last three years include several major vendors in the meeting-AI space. The data you give them is not as protected as the marketing pages suggest.</p>
+
+<h2>Performance: what to expect</h2>
+
+<p>On an M2 Pro Mac with 32 GB of memory:</p>
+
+<ul>
+<li><strong>Transcription:</strong> A 60-minute meeting transcribes with Whisper.cpp medium in about 4 minutes. WhisperX with diarization takes about 10 minutes.</li>
+<li><strong>Summarization:</strong> Gemma 3 27B summarizes a 60-minute transcript in about 90 seconds. Qwen 2.5 32B takes about 2 minutes.</li>
+<li><strong>End-to-end:</strong> Drop the audio file in the folder, walk away, come back in 15 minutes to clean notes.</li>
+</ul>
+
+<p>On an RTX 4090, everything is roughly 3 times faster.</p>
+
+<h2>What this stack still doesn't do</h2>
+
+<p>Honest reporting: the hosted tools beat self-hosted on three things. They handle real-time live transcription during the meeting better. They have polished UIs for sharing summaries with teammates. And they integrate cleanly with calendar invites and CRM systems.</p>
+
+<p>If those things matter to you more than data control, keep paying. If you just want clean notes from your meetings without your conversations training someone else's model, the local pipeline wins on every other axis — including cost over any timeframe longer than six months.</p>
+
+<h2>Where to start tomorrow</h2>
+
+<p>Don't try to build all of this at once. Start with the simplest version: install Whisper.cpp, download the medium model, transcribe one recording manually. See if you like the output. Then install Ollama, pull Gemma 3 27B, and summarize that transcript. If the summary is useful, write the glue script. If it's not, swap in a bigger model or sharpen your prompt before adding any complexity.</p>
+
+<p>The whole thing — from zero to working pipeline — takes most people a Saturday afternoon. After that, every meeting you record gets transcribed and summarized for free, forever, on hardware you already own, without any of it leaving your house.</p>
+
+</div>
+<div class="cb"><h3>Ready to Transform Your Business with AI?</h3><p>Professional AI agent setup with honest pricing. Working system in 48 hours.</p><a href="https://kermiclemedia.com#overview">Get Started Today</a></div>
+</article></main>
+<footer><p>&copy; 2026 <a href="https://kermiclemedia.com">Kermicle Media</a>. All rights reserved.</p><p style="margin-top:0.5rem"><a href="https://kermiclemedia.com/privacy-policy.html">Privacy Policy</a> &middot; <a href="https://kermiclemedia.com/terms-of-service.html">Terms of Service</a></p></footer>
+</body></html>
