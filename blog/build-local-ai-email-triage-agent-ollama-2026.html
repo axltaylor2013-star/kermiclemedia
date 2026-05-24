@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build a Local AI Email Triage Agent with Ollama in 2026 - Kermicle Media Blog</title>
+<meta name="description" content="Build a private AI agent that triages your inbox locally with Ollama. Step-by-step setup, model picks, and prompts for inbox automation in 2026.">
+<link rel="canonical" href="https://kermiclemedia.com/blog/build-local-ai-email-triage-agent-ollama-2026.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#e0e0e0;line-height:1.8;min-height:100vh}body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 50%,rgba(16,185,129,.08)0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(16,185,129,.05)0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(234,179,8,.03)0%,transparent 50%);pointer-events:none;z-index:0}nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(234,179,8,.2);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.3rem;font-weight:700;color:#eab308;text-decoration:none}.logo span{color:#fff}.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:#a0a0a0;text-decoration:none;font-size:.9rem}.nav-links a:hover{color:#eab308}.nav-links .cta{background:#eab308;color:#0a0a0a;padding:.5rem 1.2rem;border-radius:6px;font-weight:600}.aw{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:3rem 1.5rem 4rem}.bc{font-size:.85rem;color:#888;margin-bottom:2rem}.bc a{color:#eab308;text-decoration:none}.ah{margin-bottom:2.5rem;border-bottom:1px solid rgba(234,179,8,.15);padding-bottom:2rem}.ct{display:inline-block;background:rgba(234,179,8,.15);color:#eab308;padding:.25rem .75rem;border-radius:20px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}h1{font-size:2.4rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:1rem}.am{color:#888;font-size:.9rem}.ac h2{font-size:1.6rem;font-weight:600;color:#eab308;margin:2.5rem 0 1rem;padding-top:1rem}.ac h3{font-size:1.25rem;font-weight:600;color:#fff;margin:2rem 0 .75rem}.ac p{margin-bottom:1.2rem;color:#d0d0d0;font-size:1.05rem}.ac ul{margin:1rem 0 1.5rem 1.5rem;color:#d0d0d0}.ac li{margin-bottom:.5rem;font-size:1.05rem}.ac strong{color:#fff}.ac a{color:#eab308}.cb{background:linear-gradient(135deg,rgba(234,179,8,.1),rgba(16,185,129,.05));border:1px solid rgba(234,179,8,.3);border-radius:12px;padding:2rem;margin:3rem 0;text-align:center}.cb h3{color:#eab308;margin-bottom:.75rem}.cb p{color:#aaa;margin-bottom:1.25rem}.cb a{display:inline-block;background:#eab308;color:#0a0a0a;padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:600}footer{position:relative;z-index:1;border-top:1px solid rgba(234,179,8,.15);padding:2rem;text-align:center;color:#666;font-size:.85rem}footer a{color:#eab308;text-decoration:none}@media(max-width:768px){h1{font-size:1.8rem}.aw{padding:2rem 1rem}.nav-links{display:none}}</style>
+</head>
+<body>
+<nav><a href="https://kermiclemedia.com" class="logo">&#9889; <span>KERMICLE</span> MEDIA</a><ul class="nav-links"><li><a href="https://kermiclemedia.com">Home</a></li><li><a href="https://kermiclemedia.com/blog/">Blog</a></li><li><a href="https://kermiclemedia.com#services">Services</a></li><li><a href="https://kermiclemedia.com#pricing">Pricing</a></li><li><a href="https://kermiclemedia.com#overview" class="cta">Get Started</a></li></ul></nav>
+<main class="aw"><div class="bc"><a href="https://kermiclemedia.com">Home</a> &rsaquo; <a href="https://kermiclemedia.com/blog/">Blog</a> &rsaquo; AI &amp; Tech</div>
+<article><header class="ah"><span class="ct">AI &amp; Tech</span><h1>How to Build a Local AI Email Triage Agent with Ollama in 2026</h1><div class="am"><span>May 24, 2026</span> &middot; 7 min read</div></header>
+<div class="ac">
+<p>Inboxes do not get smaller. Sales pitches, newsletters, automated alerts, and the three actual emails you needed to see all pile up in the same place. The usual fix is a paid tool that ships your mail to a third-party server for processing. There is a better option in 2026: run the triage agent yourself, on your own hardware, with a small local model. Your messages never leave your machine, the only ongoing cost is electricity, and the rules are yours to write.</p>
+<p>A local triage agent is a small script that pulls new messages, asks a local LLM to classify each one, and acts on the answer. It can add labels, move messages to folders, draft replies, or simply queue a short morning digest. Setup takes an afternoon. What follows is a complete walkthrough you can adapt to Gmail, Outlook, Fastmail, or any IMAP inbox.</p>
+
+<h2>What You Need Before You Start</h2>
+<p>The agent has three moving pieces: an inbox you can read programmatically, a local LLM runtime, and a small script that glues them together. Most of the work is one-time setup.</p>
+<p>For hardware, anything with at least 16 GB of RAM and a modern CPU will run a 7B-parameter model comfortably. If you have an Nvidia GPU with 8 GB of VRAM or an Apple Silicon Mac, you will get faster classifications and can use a larger model. A Mac mini with the M4 chip handles a couple hundred emails an hour without breaking a sweat.</p>
+<p>The shopping list is short:</p>
+<ul>
+<li>A computer that can stay on, or wake on schedule</li>
+<li><strong>Ollama</strong> installed and running</li>
+<li>Python 3.11 or newer with the <strong>imapclient</strong> and <strong>requests</strong> libraries</li>
+<li>An app-specific password for your email provider (Gmail and Outlook both block plain logins)</li>
+</ul>
+
+<h2>Choosing the Right Model</h2>
+<p>Email classification does not need a frontier model. The job is to read a subject line and the first few hundred characters of the body, then output a single category. Small models do this well and run fast.</p>
+
+<h3>Top picks for triage in 2026</h3>
+<p><strong>Llama 3.2 3B</strong> is the lightest option that still produces clean, structured output. It is the right pick if you are running on a laptop or a low-power home server. Pull it with <strong>ollama pull llama3.2:3b</strong>.</p>
+<p><strong>Qwen 2.5 7B</strong> has become the sweet spot for people doing structured tasks at home. It follows JSON output prompts reliably and handles non-English mail well. Grab it with <strong>ollama pull qwen2.5:7b</strong>.</p>
+<p><strong>Mistral Small 3</strong> is a step up if you have the VRAM for it. It catches subtle distinctions, like a genuine partnership pitch versus a templated cold email, better than the smaller models. Worth it if your inbox has a lot of grey-zone messages.</p>
+<p>For the rest of this guide we will assume Qwen 2.5 7B. Swap freely.</p>
+
+<h2>Setting Up Ollama</h2>
+<p>Install Ollama from the official site. On macOS it is a regular app you drag into Applications; on Linux it is a one-line installer. Once it is running, you can pull and test a model from a terminal.</p>
+<p>Verify the install with a quick prompt:</p>
+<p><strong>ollama run qwen2.5:7b "Classify this email as urgent or not: Quick question about the contract, can you take a look today?"</strong></p>
+<p>If you get a coherent answer in a few seconds, you are set. Ollama exposes a local HTTP API on port 11434, which is what your triage script will talk to.</p>
+
+<h3>Keep the model warm</h3>
+<p>Cold-start latency is the main thing that makes a local agent feel sluggish. Ollama unloads models after a few minutes of inactivity by default. Set <strong>OLLAMA_KEEP_ALIVE=-1</strong> in your environment to keep the model resident, or pass <strong>keep_alive: -1</strong> in the API request. Memory is cheap; the latency tax is annoying.</p>
+
+<h2>Connecting Your Inbox</h2>
+<p>Email APIs vary, but IMAP works everywhere. For Gmail, generate an app password in your Google Account security settings, which requires two-factor auth first. For Outlook, generate one in Microsoft account security. Other providers usually have a similar option buried in the same place.</p>
+<p>Once you have a password, a few lines of Python connect and pull unread messages. The library <strong>imapclient</strong> is the cleanest option in 2026. It returns plain dictionaries and handles the obscure parts of the IMAP protocol so you do not have to. Install it with <strong>pip install imapclient</strong>.</p>
+<p>A minimal fetch loop opens a connection, selects the inbox, searches for unread messages from the last hour, downloads them, and yields each one to your script. That is the entire input side, and it is maybe twenty lines of code.</p>
+<p>For Gmail specifically, you can use the X-GM-LABELS extension to read and write Gmail labels directly through IMAP, which is what you want for the act-on step later.</p>
+
+<h2>Writing the Triage Prompt</h2>
+<p>This is the part you will iterate on. A good triage prompt has three pieces: a clear set of categories, a few examples, and a strict output format.</p>
+
+<h3>A starter prompt</h3>
+<p>You are an email triage assistant. Read the email below and classify it into exactly one category:</p>
+<ul>
+<li><strong>URGENT</strong> &mdash; needs a response today</li>
+<li><strong>WAITING</strong> &mdash; someone is waiting on me, but not today</li>
+<li><strong>NEWSLETTER</strong> &mdash; bulk content I might read later</li>
+<li><strong>RECEIPT</strong> &mdash; order confirmation, invoice, or shipping update</li>
+<li><strong>NOISE</strong> &mdash; promotional, automated, or low-value</li>
+<li><strong>PERSONAL</strong> &mdash; from a friend or family member</li>
+</ul>
+<p>Output only a JSON object with three keys: category, confidence (0 to 1), and reason (one short sentence). Then pass in the subject, sender, and the first 800 characters of the body.</p>
+<p>Three things make this prompt work. First, the categories are mutually exclusive, so the model is not being asked to pick a vibe. Second, the JSON output is easy to parse and easy to validate. Third, the body is truncated so the model is not fed entire newsletters.</p>
+
+<h3>Add your own examples</h3>
+<p>The single biggest improvement comes from adding three or four examples of edge cases that exist in <strong>your</strong> inbox. Vendor pitches that look like personal outreach, automated alerts from systems you actually care about, recurring newsletters from people you genuinely want to read &mdash; drop two-line examples of each into the prompt and watch accuracy jump.</p>
+
+<h2>Putting It All Together</h2>
+<p>The full script is small. It runs a tight loop:</p>
+<ul>
+<li>Connect to IMAP</li>
+<li>Fetch unread messages since the last run</li>
+<li>For each message, send subject and body to Ollama</li>
+<li>Parse the JSON response</li>
+<li>Apply a label or move the message based on the category</li>
+<li>Mark the message as read, or leave it unread per your preference</li>
+</ul>
+<p>Save the timestamp of the last run so you do not re-process the same mail. A tiny SQLite database or a single text file works fine. About 120 lines of Python in total once you handle errors.</p>
+<p>A few details worth getting right: catch JSON parse errors from the model and re-prompt once before giving up; log every classification to a CSV so you can review accuracy later; never delete mail from the script &mdash; labels and folders only. The first rule of building automation around your inbox is that the automation should be reversible.</p>
+
+<h2>Scheduling and Running It</h2>
+<p>On macOS, a launchd agent or a cron entry every fifteen minutes works well. On Linux, systemd timers. On Windows, Task Scheduler. The script should be safe to run while it is already running &mdash; a simple lock file in /tmp is enough.</p>
+<p>For a snappier experience, run it as a long-lived process that polls IMAP IDLE, the protocol's built-in push notification, and processes mail the second it arrives. Both <strong>imapclient</strong> and <strong>aioimaplib</strong> support IDLE. With a warm model you will see new mail labeled within two or three seconds of hitting your inbox.</p>
+
+<h2>Tuning the System Over Time</h2>
+<p>The agent gets better the more you watch it. For the first week, label every classification in your CSV log as correct or wrong. Look at the wrong ones. They almost always cluster &mdash; same kind of sender, same kind of subject pattern. Add a one-line example to your prompt that fixes the cluster, and the next week's accuracy jumps.</p>
+<p>After a month, you will have an agent that knows your inbox better than any cloud service ever could, because you tuned it on the actual mail you actually get. And it runs forever for the cost of leaving a small computer on.</p>
+
+<h3>When to upgrade your model</h3>
+<p>If the 7B model starts struggling on a category that matters &mdash; say, distinguishing investor outreach from generic networking spam &mdash; try a 13B or 14B model before changing the prompt. The jump in reading comprehension is bigger than the jump in size suggests. Mistral Small 3 and Qwen 2.5 14B both fit on a 24 GB GPU and run at usable speed on Apple Silicon, too.</p>
+
+<h3>Adding draft replies</h3>
+<p>Once classification is solid, the next layer is auto-drafting. Pick one category, say URGENT, and add a second Ollama call that takes the email and a short writing sample of yours, then proposes a two-paragraph response saved to your Drafts folder. You still hit send by hand; the agent saves the cold-start writing minute. People who add this step often find it is the single biggest time win of the whole project.</p>
+
+<h2>Where to Take It Next</h2>
+<p>The triage agent is a foundation. The same pattern works for meeting requests (route them to a calendar agent), invoices (pipe them into your bookkeeping tool), and even suspicious mail (a local agent has time to actually read a phishing attempt and tell you what is sketchy about it). Once one local agent is running, the second is a copy and a new prompt.</p>
+<p>The point is not to remove email. It is to remove the part of email where you are acting as a low-paid sorter for senders who did not earn your attention. A 7B model running on a box in your closet is now perfectly good at that job. Hand it off and get back to the three emails that actually matter.</p>
+</div>
+<div class="cb"><h3>Ready to Transform Your Business with AI?</h3><p>Professional AI agent setup with honest pricing. Working system in 48 hours.</p><a href="https://kermiclemedia.com#overview">Get Started Today</a></div>
+</article></main>
+<footer><p>&copy; 2026 <a href="https://kermiclemedia.com">Kermicle Media</a>. All rights reserved.</p><p style="margin-top:0.5rem"><a href="https://kermiclemedia.com/privacy-policy.html">Privacy Policy</a> &middot; <a href="https://kermiclemedia.com/terms-of-service.html">Terms of Service</a></p></footer>
+</body></html>
